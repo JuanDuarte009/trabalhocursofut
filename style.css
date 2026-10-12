@@ -1,78 +1,247 @@
+/* CONFIGURAÇÃO GERAL */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
-
-
+    background-color: #0b1220;
+    color: white;
 }
 
+/* CABEÇALHO */
 header {
     background-color: #111827;
     color: white;
-    padding: 20px;
+    padding: 25px 15px;
     text-align: center;
-
+    border-bottom: 3px solid #22c55e;
 }
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #22c55e;
+}
+
+/* MENU */
+nav {
+    margin-top: 20px;
+}
+
 nav a {
     color: white;
     text-decoration: none;
-    margin: 10px;
-
+    margin: 0 12px;
+    font-weight: bold;
 }
 
+nav a:hover {
+    color: #22c55e;
+}
+
+/* CONTEÚDO PRINCIPAL */
 main {
-    color: #111;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 30px auto;
     padding: 20px;
-
 }
 
-.sobre{
-    background-color: white;
-
-}
-
-.Lendas{
-    background-color:#111827;
-    color:black;
-    padding: 20px;
+/* TÍTULOS */
+h2 {
+    color: #22c55e;
+    text-align: center;
     margin-bottom: 20px;
-
 }
 
-.times{
-    background-color: white;
-
+h3 {
+    color: #86efac;
 }
 
-
-.campeonatos{
-    background-color: white;
-
+/* SEÇÕES */
+.sobre,
+.Lendas,
+.Times,
+.Campeonatos,
+.curiosidades,
+.posições,
+.posicoes {
+    background-color: #172033;
+    color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
-.curiosidades{
-    background-color: white;
+/* TEXTOS */
+p {
+    line-height: 1.7;
 }
 
-.posiçoes{
-    background-color: white;
-
-}
-
-.imagem{
-    background-color: white;
-
-}
-
-.link{
-    background-color: white;
-
-}
-
+/* IMAGENS */
 .imagem {
     text-align: center;
-
+    margin: 20px 0;
 }
 
+.imagem img {
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #22c55e;
+    border-radius: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+/* LISTAS */
+ul,
+ol {
+    line-height: 1.9;
+    padding-left: 30px;
+}
+
+/* LINKS NO CONTEÚDO */
+main a {
+    color: #4ade80;
+}
+
+main a:hover {
+    color: white;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid #22c55e;
+}
+
+/* TELAS PEQUENAS */
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    .sobre,
+    .Lendas,
+    .Times,
+    .Campeonatos,
+    .curiosidades,
+    .posições,
+    .posicoes {
+        padding: 15px;
+    }
+}
+
+/* ORGANIZAÇÃO DAS LENDAS */
+.Lendas h3 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Lendas p {
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.Lendas .imagem {
+    margin: 20px auto;
+}
+
+.Lendas .imagem img {
+    max-width: 300px;
+    border: 2px solid #22c55e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* DESTAQUE DOS TIMES E CAMPEONATOS */
+.Times h3,
+.Campeonatos h3 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* ESPAÇAMENTO DOS TÍTULOS */
+h2 {
+    padding-bottom: 10px;
+}
+
+/* Cartões das lendas */
+.Lendas h3 {
+    background-color: #111827;
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 300px;
+    margin: 25px auto 15px;
+}
+
+.Lendas .imagem img {
+    background-color: #ffffff;
+    padding: 8px;
+    transition: transform 0.3s ease;
+}
+
+.Lendas .imagem img:hover {
+    transform: scale(1.04);
+}
+
+.Lendas p {
+    max-width: 750px;
+    margin: 15px auto 30px;
+    line-height: 1.8;
+}
+
+
+.lista-jogadores {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.cartao-jogador {
+    background-color: #172033;
+    border: 1px solid #26364d;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.cartao-jogador h3 {
+    margin-top: 0;
+}
+
+.cartao-jogador p {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.cartao-jogador .imagem img {
+    max-width: 100%;
+}
+
+@media (max-width: 700px) {
+    .lista-jogadores {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cartao-jogador .imagem img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 0 auto;
+}
